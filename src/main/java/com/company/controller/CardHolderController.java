@@ -1,6 +1,6 @@
 package com.company.controller;
 
-import com.company.dto.CardHolderReqDto;
+import com.company.dto.request.CardHolderReqDto;
 import com.company.service.CardHolderService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;

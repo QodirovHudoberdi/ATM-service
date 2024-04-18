@@ -19,18 +19,20 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne(fetch = FetchType.EAGER)
-    @Column(name = "card_holder_id")
+    @JoinColumn(name = "card_holder_id")
     private CardHolder cardHolder;
     @Column(name = "expired_date")
-    private LocalDate localDate=LocalDate.now().plusYears(5);
+    private LocalDate expiredDate;
     @Column(name = "balance")
-    private Float balance;
+    private Float balance=0f;
     @Column (name = "is_active")
     private Boolean isActive =true;
     @Column (name = "card_number")
     @Size(max = 16,min = 16)
     private String cardNumber;
-    @Column (name = "card_type")
-    private String cardType;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn (name = "card_type_id")
+    private CardType cardType;
+
 
 }

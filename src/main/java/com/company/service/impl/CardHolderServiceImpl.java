@@ -1,7 +1,7 @@
 package com.company.service.impl;
 
-import com.company.dto.CardHolderReqDto;
-import com.company.dto.CardHolderResDto;
+import com.company.dto.request.CardHolderReqDto;
+import com.company.dto.response.CardHolderResDto;
 import com.company.entity.CardHolder;
 import com.company.exps.AlreadyExistException;
 import com.company.mapping.CardHolderMapper;
