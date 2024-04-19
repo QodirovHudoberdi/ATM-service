@@ -11,21 +11,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class CardType {
+public class Currency {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column()
     private String name;
-    @Column(name = "beginning_num")
-    private String beginCardNumber;
-    @Column
-    private Boolean isActive = true;
-    @Column
-    private Integer expiredYears;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "currency_id")
-    private Currency currency;
 }
-
-

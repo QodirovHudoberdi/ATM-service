@@ -9,4 +9,5 @@ public class CardTypeResDto {
     private String beginCardNumber;
     private Boolean isActive;
     private Integer expiredYears;
+    private CurrencyResDto currency;
 }

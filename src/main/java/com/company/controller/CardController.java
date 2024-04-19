@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import com.company.dto.request.CardReqDto;
+import com.company.dto.request.FillCardReqDto;
 import com.company.dto.request.PinflReqDto;
 import com.company.service.CardService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,13 +14,23 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("card")
 public class CardController {
 private final CardService cardService;
+
     @PostMapping("/createCard")
-    public ResponseEntity<?> createCardHolder(@RequestBody CardReqDto cardReqDto, HttpServletRequest httpServletRequest) {
+    public ResponseEntity<?> createCard(@RequestBody CardReqDto cardReqDto, HttpServletRequest httpServletRequest) {
         return ResponseEntity.ok(cardService.createCard(cardReqDto,httpServletRequest));
     }
     @GetMapping("/byPinfl")
     public ResponseEntity<?> getByPinfl(@RequestBody PinflReqDto reqDto, HttpServletRequest httpServletRequest) {
         return ResponseEntity.ok(cardService.getByPinfl(reqDto));
+    }
+   @PutMapping("/fill")
+    public ResponseEntity<?> fillCard(@RequestBody FillCardReqDto cardReqDto, HttpServletRequest httpServletRequest) {
+        return ResponseEntity.ok(cardService.fillCard(cardReqDto,httpServletRequest));
+    }
+    @PutMapping("block")
+    public ResponseEntity<?> blockCard(@RequestBody CardReqDto cardReqDto,HttpServletRequest httpServletRequest){
+
+        return ResponseEntity.ok(cardService.blockCard(cardReqDto,httpServletRequest));
     }
 
 }

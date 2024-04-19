@@ -8,4 +8,5 @@ public class CardTypeReqDto {
     private String beginCardNumber;
     private Boolean isActive;
     private Integer expiredYears;
+    private  Long currencyId;
 }

@@ -26,13 +26,14 @@ public class Card {
     @Column(name = "balance")
     private Float balance=0f;
     @Column (name = "is_active")
-    private Boolean isActive =true;
+    private Boolean isActive ;
     @Column (name = "card_number")
     @Size(max = 16,min = 16)
     private String cardNumber;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn (name = "card_type_id")
     private CardType cardType;
-
+    @Column (name = "pin_code")
+    private String pinCode;
 
 }

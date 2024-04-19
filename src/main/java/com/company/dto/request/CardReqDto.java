@@ -6,6 +6,7 @@ import lombok.Data;
 public class CardReqDto {
     private Long cardholderId;
     private Long cardTypeId;
-
+    private String pinCode;
+    private String cardNumber;
 
 }

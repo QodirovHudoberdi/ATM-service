@@ -18,15 +18,23 @@ public class ControllerAdvice {
                 e.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
     }
- public ResponseEntity<?> on(NotFoundException e) {
+
+    public ResponseEntity<?> on(NotFoundException e) {
         final ResponseMessage result = new ResponseMessage(HttpStatus.NOT_FOUND.value(), "Not Found",
                 e.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
     }
-public ResponseEntity<?> on(NotAllowedExceptions e) {
+
+    public ResponseEntity<?> on(NotAllowedExceptions e) {
         final ResponseMessage result = new ResponseMessage(HttpStatus.METHOD_NOT_ALLOWED.value(), "Not Allowed for you",
                 e.getMessage());
         return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body(result);
+    }
+
+    public ResponseEntity<?> on(OkResponse e) {
+        final ResponseMessage result = new ResponseMessage(HttpStatus.ACCEPTED.value(), "Not Allowed for you",
+                e.getMessage());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(result);
     }
 
 }

@@ -13,4 +13,5 @@ public class CardResDto {
     private Boolean isActive;
     private String cardNumber;
     private CardTypeResDto cardType;
+    private String pinCode;
 }
