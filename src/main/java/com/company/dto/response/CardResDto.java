@@ -14,4 +14,5 @@ public class CardResDto {
     private String cardNumber;
     private CardTypeResDto cardType;
     private String pinCode;
+    private Integer count;
 }

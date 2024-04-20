@@ -1,0 +1,112 @@
+2024-04-20 23:51:54 [main] INFO  c.company.AtmCardHolderApplication - Starting AtmCardHolderApplication using Java 17.0.9 with PID 8296 (C:\Users\hudoberdi23\Documents\AtmCardHolder\target\classes started by hudoberdi23 in C:\Users\hudoberdi23\Documents\AtmCardHolder)
+2024-04-20 23:51:54 [main] INFO  c.company.AtmCardHolderApplication - The following 1 profile is active: "dev"
+2024-04-20 23:51:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-20 23:51:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 159 ms. Found 5 JPA repository interfaces.
+2024-04-20 23:51:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8581 (http)
+2024-04-20 23:51:57 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-20 23:51:57 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-20 23:51:57 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-04-20 23:51:57 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3408 ms
+2024-04-20 23:51:57 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-20 23:51:58 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-20 23:51:58 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-20 23:51:58 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-20 23:51:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-20 23:51:59 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3cbfdf5c
+2024-04-20 23:51:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-20 23:52:01 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-20 23:52:01 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20 23:52:02 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-20 23:52:03 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 15 mappings in 'requestMappingHandlerMapping'
+2024-04-20 23:52:03 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-04-20 23:52:03 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-20 23:52:03 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-20 23:52:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8581 (http) with context path ''
+2024-04-20 23:52:03 [main] INFO  c.company.AtmCardHolderApplication - Started AtmCardHolderApplication in 11.324 seconds (process running for 15.841)
+2024-04-20 23:52:03 [main] INFO  c.company.utils.StartInitialization - --------- Start University-service :>> 2024-04-20 23:52:03 <<------------->>
+2024-04-20 23:58:22 [http-nio-8581-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-20 23:58:22 [http-nio-8581-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@16718e1b
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@6c120b00
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-04-20 23:58:22 [http-nio-8581-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/card/createCard", parameters={}
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.company.controller.CardController#createCard(CardReqDto, HttpServletRequest)
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [CardReqDto(cardholderId=1, cardTypeId=2, pinCode=1123, cardNumber=null)]
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [CardResDto(id=4, cardHolder=CardHolderResDto(id=1, firstName=Hudoberdi, lastName=Qodirov, middleName (truncated)...]
+2024-04-20 23:58:22 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-04-20 23:59:44 [http-nio-8581-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/card/transfer", parameters={}
+2024-04-20 23:59:44 [http-nio-8581-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-04-20 23:59:44 [http-nio-8581-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 405 METHOD_NOT_ALLOWED
+2024-04-20 23:59:44 [http-nio-8581-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2024-04-20 23:59:44 [http-nio-8581-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-04-20 23:59:44 [http-nio-8581-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-04-20 23:59:44 [http-nio-8581-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Sat Apr 20 23:59:44 UZT 2024, status=405, error=Method Not Allowed, path=/card/transfer}]
+2024-04-20 23:59:44 [http-nio-8581-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 405
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - PUT "/card/transfer", parameters={}
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.company.controller.CardController#transfer(TransferReqDto, HttpServletRequest)
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [TransferReqDto(fromCard=8600730193930007, Amount=null, pinCode=1122, currencyId=1, toCard=8600730181 (truncated)...]
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Failed to complete request: java.lang.NullPointerException: Cannot invoke "java.lang.Float.floatValue()" because the return value of "com.company.dto.request.TransferReqDto.getAmount()" is null
+2024-04-20 23:59:53 [http-nio-8581-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Float.floatValue()" because the return value of "com.company.dto.request.TransferReqDto.getAmount()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "java.lang.Float.floatValue()" because the return value of "com.company.dto.request.TransferReqDto.getAmount()" is null
+	at com.company.service.impl.CardServiceImpl.transferToCard(CardServiceImpl.java:164)
+	at com.company.controller.CardController.transfer(CardController.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for PUT "/error", parameters={}
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Sat Apr 20 23:59:53 UZT 2024, status=500, error=Internal Server Error, path=/card/transfe (truncated)...]
+2024-04-20 23:59:53 [http-nio-8581-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500

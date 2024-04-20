@@ -3,6 +3,7 @@ package com.company.controller;
 import com.company.dto.request.CardReqDto;
 import com.company.dto.request.FillCardReqDto;
 import com.company.dto.request.PinflReqDto;
+import com.company.dto.request.TransferReqDto;
 import com.company.service.CardService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -29,8 +30,15 @@ private final CardService cardService;
     }
     @PutMapping("block")
     public ResponseEntity<?> blockCard(@RequestBody CardReqDto cardReqDto,HttpServletRequest httpServletRequest){
-
         return ResponseEntity.ok(cardService.blockCard(cardReqDto,httpServletRequest));
+    }
+    @PutMapping("updatePIn")
+    public ResponseEntity<?> updateCardPIn(@RequestBody CardReqDto cardReqDto,HttpServletRequest httpServletRequest){
+        return ResponseEntity.ok(cardService.updateCardPin(cardReqDto,httpServletRequest));
+    }
+    @PutMapping("transfer")
+    public ResponseEntity<?> transfer(@RequestBody TransferReqDto transferReqDto, HttpServletRequest httpServletRequest){
+        return ResponseEntity.ok(cardService.transferToCard(transferReqDto,httpServletRequest));
     }
 
 }

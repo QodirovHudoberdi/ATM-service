@@ -35,5 +35,7 @@ public class Card {
     private CardType cardType;
     @Column (name = "pin_code")
     private String pinCode;
+    @Column(name = "count")
+    private Integer count =3;
 
 }
