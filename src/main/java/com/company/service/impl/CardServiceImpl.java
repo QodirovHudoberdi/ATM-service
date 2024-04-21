@@ -1,13 +1,9 @@
 package com.company.service.impl;
 
-import com.company.dto.request.TransferReqDto;
-import com.company.dto.response.TransferResDto;
-import com.company.dto.request.CardReqDto;
-import com.company.dto.request.FillCardReqDto;
-import com.company.dto.request.PinflReqDto;
-import com.company.dto.response.CardHolderResDto;
-import com.company.dto.response.CardResDto;
-import com.company.dto.response.HistoryWithAtmResDto;
+import com.company.dto.request.*;
+import com.company.dto.response.*;
+import com.company.dto.response.model.HistoryInPutResModel;
+import com.company.dto.response.model.HistoryOutputModel;
 import com.company.entity.Card;
 import com.company.entity.CardHolder;
 import com.company.entity.CardType;
@@ -28,6 +24,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
@@ -87,7 +84,7 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public List<CardResDto> getByPinfl(PinflReqDto pinfl) {
+    public List<CardResDto> getByPinfl(PinflReqDto pinfl, HttpServletRequest httpServletRequest) {
         List<Card> allByCardHolderPinfl = cardRepository.getAllByCardHolder_Pinfl(pinfl.getPinfl());
         return cardMapping.toDto(allByCardHolderPinfl);
     }
@@ -184,8 +181,82 @@ public class CardServiceImpl implements CardService {
         transferResDto.setCommission(transferReqDto.getAmount()/100);
         transferResDto.setToCard(cardMapping.toDto(toCard));
         transferResDto.setFromCard(cardMapping.toDto(fromCard));
-        transferResDto.setId(historyCard.getId());
+        transferResDto.setTransferId(historyCard.getId());
         return transferResDto;
+    }
+
+    @Override
+    public OutPutResDto getSendHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest) {
+
+        List<HistoryCard> sendHistory = historyCardRepository.findAllByFromCard_CardNumber(historyReqDto.getCardNumber());
+        OutPutResDto outPutResDto = new OutPutResDto();
+        Card card = cardRepository.findByCardNumber(historyReqDto.getCardNumber());
+
+        if (card==null){
+            throw new NotFoundException("Sender Card is Not Found");
+        }
+
+        if (!card.getPinCode().equals(historyReqDto.getPinCode())) {
+            if (validatePinCode(card)) {
+                throw new NotAllowedExceptions("Pin Code is Wrong");
+            } else throw new NotAllowedExceptions("Card is Blocked");
+        }
+
+        outPutResDto.setCard(cardMapping.toDto(card));
+        List<HistoryOutputModel> outputModels=new ArrayList<>();
+        for (HistoryCard historyCard : sendHistory) {
+            if (historyCard.getToCard()!=null){
+            HistoryOutputModel outputModel=new HistoryOutputModel();
+            outputModel.setAmount(historyCard.getAmount());
+            outputModel.setToCard(cardMapping.toDto(historyCard.getToCard()));
+            outputModel.setCommission(historyCard.getCommission());
+            outputModel.setDate(historyCard.getLocalDateTime());
+            outputModel.setTransferId(historyCard.getId());
+            outputModels.add(outputModel);
+            }
+        }
+        if (outputModels.isEmpty()){
+            throw new NotFoundException("No transfers have been made from this card yet");
+        }
+        outPutResDto.setTransfers(outputModels);
+        return outPutResDto;
+    }
+
+    @Override
+    public InPutResDto getReceiveHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest) {
+
+        List<HistoryCard> receiveHistory = historyCardRepository.findAllByToCard_CardNumber(historyReqDto.getCardNumber());
+        InPutResDto inPutResDto = new InPutResDto();
+        Card card = cardRepository.findByCardNumber(historyReqDto.getCardNumber());
+
+        if (card==null){
+            throw new NotFoundException("Sender Card is Not Found");
+        }
+
+        if (!card.getPinCode().equals(historyReqDto.getPinCode())) {
+            if (validatePinCode(card)) {
+                throw new NotAllowedExceptions("Pin Code is Wrong");
+            } else throw new NotAllowedExceptions("Card is Blocked");
+        }
+
+        inPutResDto.setCard(cardMapping.toDto(card));
+        List<HistoryInPutResModel> inputModels=new ArrayList<>();
+        for (HistoryCard historyCard : receiveHistory) {
+            if (historyCard.getFromCard()!=null){
+            HistoryInPutResModel inputModel=new HistoryInPutResModel();
+            inputModel.setAmount(historyCard.getAmount());
+            inputModel.setFromCard(cardMapping.toDto(historyCard.getToCard()));
+            inputModel.setCommission(historyCard.getCommission());
+            inputModel.setDate(historyCard.getLocalDateTime());
+            inputModel.setTransferId(historyCard.getId());
+            inputModels.add(inputModel);
+            }
+        }
+        if (inputModels.isEmpty()){
+            throw new NotFoundException("No Receive have been made from this card yet");
+        }
+        inPutResDto.setReceives(inputModels);
+        return inPutResDto;
     }
 
     /**

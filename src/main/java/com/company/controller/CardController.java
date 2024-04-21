@@ -1,9 +1,6 @@
 package com.company.controller;
 
-import com.company.dto.request.CardReqDto;
-import com.company.dto.request.FillCardReqDto;
-import com.company.dto.request.PinflReqDto;
-import com.company.dto.request.TransferReqDto;
+import com.company.dto.request.*;
 import com.company.service.CardService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +19,7 @@ private final CardService cardService;
     }
     @GetMapping("/byPinfl")
     public ResponseEntity<?> getByPinfl(@RequestBody PinflReqDto reqDto, HttpServletRequest httpServletRequest) {
-        return ResponseEntity.ok(cardService.getByPinfl(reqDto));
+        return ResponseEntity.ok(cardService.getByPinfl(reqDto,httpServletRequest));
     }
    @PutMapping("/fill")
     public ResponseEntity<?> fillCard(@RequestBody FillCardReqDto cardReqDto, HttpServletRequest httpServletRequest) {
@@ -40,5 +37,12 @@ private final CardService cardService;
     public ResponseEntity<?> transfer(@RequestBody TransferReqDto transferReqDto, HttpServletRequest httpServletRequest){
         return ResponseEntity.ok(cardService.transferToCard(transferReqDto,httpServletRequest));
     }
-
+    @GetMapping("sendHistory")
+    public ResponseEntity<?> historySend(@RequestBody HistoryReqDto historyReqDto,HttpServletRequest httpServletRequest){
+        return ResponseEntity.ok(cardService.getSendHistory(historyReqDto,httpServletRequest));
+    }
+    @GetMapping("receiveHistory")
+    public ResponseEntity<?> historyReceive(@RequestBody HistoryReqDto historyReqDto,HttpServletRequest httpServletRequest){
+        return ResponseEntity.ok(cardService.getReceiveHistory(historyReqDto,httpServletRequest));
+    }
 }

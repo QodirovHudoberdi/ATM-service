@@ -1,12 +1,7 @@
 package com.company.service;
 
-import com.company.dto.request.CardReqDto;
-import com.company.dto.request.FillCardReqDto;
-import com.company.dto.request.PinflReqDto;
-import com.company.dto.request.TransferReqDto;
-import com.company.dto.response.CardResDto;
-import com.company.dto.response.HistoryWithAtmResDto;
-import com.company.dto.response.TransferResDto;
+import com.company.dto.request.*;
+import com.company.dto.response.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +11,7 @@ import java.util.List;
 public interface CardService {
     CardResDto createCard(CardReqDto cardReqDto, HttpServletRequest httpServletRequest);
 
-    List<CardResDto> getByPinfl(PinflReqDto pinfl);
+    List<CardResDto> getByPinfl(PinflReqDto pinfl, HttpServletRequest httpServletRequest);
 
     HistoryWithAtmResDto fillCard(FillCardReqDto cardReqDto, HttpServletRequest httpServletRequest);
 
@@ -25,4 +20,8 @@ public interface CardService {
     CardResDto updateCardPin(CardReqDto cardReqDto, HttpServletRequest httpServletRequest);
 
     TransferResDto transferToCard(TransferReqDto transferReqDto, HttpServletRequest httpServletRequest);
+
+    OutPutResDto getSendHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
+
+    InPutResDto getReceiveHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
 }
