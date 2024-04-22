@@ -24,4 +24,6 @@ public interface CardService {
     OutPutResDto getSendHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
 
     InPutResDto getReceiveHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
+
+    CashingResDto cashingFromAtm(CashingReqDto cashingReqDto, HttpServletRequest httpServletRequest);
 }

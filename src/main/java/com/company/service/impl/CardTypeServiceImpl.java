@@ -55,33 +55,66 @@ public class CardTypeServiceImpl implements CardtypeService {
         dto.setCurrency(currencyResDto);
         return dto;
     }
-
+    /**
+     * Retrieves all card types.
+     *
+     * @param httpServletRequest    HttpServletRequest object for additional context
+     * @return                      List of card type response DTOs
+     */
     @Override
+
     public List<CardTypeResDto> getAllCardType(HttpServletRequest httpServletRequest) {
+        // Retrieve all card types from the repository
         List<CardType> all = cardTypeRepository.findAll();
+
+        // Map the card types to response DTOs using the mapper
         return cardTypeMapper.toDto(all);
     }
 
+
+    /**
+     * Updates a card type by name.
+     *
+     * @param name                  The name of the card type to update
+     * @param cardTypeReqDto        Updated details of the card type
+     * @param httpServletRequest    HttpServletRequest object for additional context
+     * @return                      The updated card type as a response DTO
+     * @throws NotFoundException   If the card type with the given name is not found
+     */
     @Override
     public CardTypeResDto updateCardType(String name, CardTypeReqDto cardTypeReqDto, HttpServletRequest httpServletRequest) {
         Optional<CardType> cardTypeByName = cardTypeRepository.findByName(name);
+
         if (cardTypeByName.isPresent()) {
             CardType cardType1 = cardTypeByName.get();
             CardType cardType = cardTypeMapper.updateFromDto(cardTypeReqDto, cardType1);
             if (cardTypeReqDto.getCurrencyId() != null) {
                 Optional<Currency> currencyById = currencyRepository.findById(cardTypeReqDto.getCurrencyId());
+
                 if (currencyById.isEmpty()) {
                     throw new NotFoundException("Currency Not Found");
                 }
+
                 Currency currency = currencyById.get();
+
                 cardType.setCurrency(currency);
             }
+
             cardTypeRepository.save(cardType);
+
             return cardTypeMapper.toDto(cardType);
         }
+
         throw new NotFoundException("This Card type not Found");
     }
-
+    /**
+     * Deletes a card type by name.
+     *
+     * @param name                  The name of the card type to delete
+     * @param httpServletRequest    HttpServletRequest object for additional context
+     * @throws NotFoundException   If the card type with the given name is not found
+     * @throws OkResponse           If the deletion is successful
+     */
     @Override
     public void deleteCardType(String name, HttpServletRequest httpServletRequest) {
         Optional<CardType> cardTypeByName = cardTypeRepository.findByName(name);

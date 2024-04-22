@@ -23,8 +23,17 @@ public class CardHolderServiceImpl implements CardHolderService {
     private final NetworkDataService networkDataService;
     private final CardHolderMapper cardHolderMapper;
     private final CardHolderRepository cardHolderRepository;
+    /**
+     * Creates a new cardHolder with the specified details.
+     *
+     * @param cardHolderReqDto      The request DTO containing the CardHolder details.
+     * @param httpServletRequest    The HTTP servlet request object.
+     * @return                      The response DTO containing the newly created CardHolder details.
+     * @throws AlreadyExistException    If a CardHolder with the same series number already exists.
+     */
     @Override
-    public CardHolderResDto createCardHolder(CardHolderReqDto cardHolderReqDto, HttpServletRequest httpServletRequest) {
+    public CardHolderResDto createCardHolder(CardHolderReqDto cardHolderReqDto,
+                                             HttpServletRequest httpServletRequest) {
         String ClientInfo = networkDataService.getClientIPv4Address(httpServletRequest);
         String ClientIP = networkDataService.getRemoteUserInfo(httpServletRequest);
         LOG.info("Create Card Holder  \t\t {}", cardHolderReqDto);

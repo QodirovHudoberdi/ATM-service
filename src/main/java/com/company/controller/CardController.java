@@ -45,4 +45,8 @@ private final CardService cardService;
     public ResponseEntity<?> historyReceive(@RequestBody HistoryReqDto historyReqDto,HttpServletRequest httpServletRequest){
         return ResponseEntity.ok(cardService.getReceiveHistory(historyReqDto,httpServletRequest));
     }
+    @PostMapping("cashing")
+    public  ResponseEntity<?> cashingFromAtm(@RequestBody CashingReqDto cashingReqDto , HttpServletRequest httpServletRequest){
+        return ResponseEntity.ok(cardService.cashingFromAtm(cashingReqDto,httpServletRequest));
+    }
 }

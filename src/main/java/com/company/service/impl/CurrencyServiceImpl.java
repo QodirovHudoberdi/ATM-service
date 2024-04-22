@@ -17,6 +17,14 @@ import java.util.List;
 @Service
 public class CurrencyServiceImpl implements CurrencyService {
     private final CurrencyRepository currencyRepository;
+    /**
+     * Adds a new currency to the system.
+     *
+     * @param currencyReqDto        The request DTO containing the currency details.
+     * @param httpServletRequest   The HTTP servlet request object.
+     * @return                     The response DTO containing the newly added currency details.
+     * @throws AlreadyExistException    If a currency with the same name already exists.
+     */
     @Override
     public CurrencyResDto addCurrency(CurrencyReqDto currencyReqDto, HttpServletRequest httpServletRequest) {
         Currency currency = currencyRepository.searchByName(currencyReqDto.getName());
@@ -28,6 +36,12 @@ public class CurrencyServiceImpl implements CurrencyService {
         currencyRepository.save(currency1);
         return  new CurrencyResDto(currency1.getId(), currency1.getName());
     }
+    /**
+     * Retrieves all currencies in the system.
+     *
+     * @param httpServletRequest   The HTTP servlet request object.
+     * @return                     A list of response DTOs containing the details of all currencies.
+     */
     @Override
     public List<CurrencyResDto> getAllCurrencies(HttpServletRequest httpServletRequest){
         List<Currency> all = currencyRepository.findAll();
