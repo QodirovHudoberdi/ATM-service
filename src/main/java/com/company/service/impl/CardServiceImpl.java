@@ -14,6 +14,8 @@ import com.company.repository.*;
 import com.company.service.CardService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -35,6 +37,8 @@ public class CardServiceImpl implements CardService {
     private final CardTypeMapper cardTypeMapper;
     private final HistoryCardRepository historyCardRepository;
     private final BankNoteRepository bankNoteRepository;
+    private final static Logger LOG = LoggerFactory.getLogger(CardHolder.class);
+    private final NetworkDataService networkDataService;
     /**
      * Creates a new card for a cardHolder.
      *
@@ -46,6 +50,8 @@ public class CardServiceImpl implements CardService {
      */
     @Override
     public CardResDto createCard(CardReqDto cardReqDto, HttpServletRequest httpServletRequest) {
+        String ClientInfo = networkDataService.getClientIPv4Address(httpServletRequest);
+        String ClientIP = networkDataService.getRemoteUserInfo(httpServletRequest);
         Optional<CardHolder> cardHolderById = cardHolderRepository.findById(cardReqDto.getCardholderId());
         if (cardHolderById.isEmpty()) {
             throw new NotFoundException("This Card Holder Not Found ");
@@ -83,6 +89,7 @@ public class CardServiceImpl implements CardService {
         cardResDto.setIsActive(card.getIsActive());
         cardResDto.setPinCode(card.getPinCode());
         cardResDto.setCount(card.getCount());
+
         return cardResDto;
     }
     /**
