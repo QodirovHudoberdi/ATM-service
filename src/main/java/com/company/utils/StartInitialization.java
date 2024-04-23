@@ -15,6 +15,6 @@ public class StartInitialization implements CommandLineRunner {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         String formattedDate = dateFormat.format(date);
-        log.info("--------- Start University-service :>> {} <<------------->>", formattedDate);
+        log.info("--------- Successfully run Card Service  :>> {} <<------------->>", formattedDate);
     }
 }

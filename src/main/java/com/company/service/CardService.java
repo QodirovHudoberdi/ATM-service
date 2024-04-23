@@ -13,7 +13,7 @@ public interface CardService {
 
     List<CardResDto> getByPinfl(PinflReqDto pinfl, HttpServletRequest httpServletRequest);
 
-    HistoryWithAtmResDto fillCard(FillCardReqDto cardReqDto, HttpServletRequest httpServletRequest);
+    HistoryWithAtmResDto fillCardBalance(FillCardReqDto cardReqDto, HttpServletRequest httpServletRequest);
 
     CardResDto blockCard(CardReqDto cardReqDto, HttpServletRequest httpServletRequest);
 
@@ -21,9 +21,4 @@ public interface CardService {
 
     TransferResDto transferToCard(TransferReqDto transferReqDto, HttpServletRequest httpServletRequest);
 
-    OutPutResDto getSendHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
-
-    InPutResDto getReceiveHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
-
-    CashingResDto cashingFromAtm(CashingReqDto cashingReqDto, HttpServletRequest httpServletRequest);
 }

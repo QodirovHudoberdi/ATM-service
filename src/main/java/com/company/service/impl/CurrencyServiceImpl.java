@@ -27,6 +27,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public CurrencyResDto addCurrency(CurrencyReqDto currencyReqDto, HttpServletRequest httpServletRequest) {
+
         Currency currency = currencyRepository.searchByName(currencyReqDto.getName());
         if (currency!=null){
             throw new AlreadyExistException("This Currency is have already");

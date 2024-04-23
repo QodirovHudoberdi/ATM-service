@@ -6,10 +6,8 @@ import com.company.service.BankNoteService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("banknote")
@@ -18,5 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
     @PostMapping("/createBankNote")
     public ResponseEntity<?> createBankNote(@RequestBody BankNoteReqDto bankNoteReqDto, HttpServletRequest httpServletRequest) {
         return ResponseEntity.ok(bankNoteService.createBankNote(bankNoteReqDto,httpServletRequest));
+    }
+    @DeleteMapping("/deleteBankNote")
+    public ResponseEntity<?> deleteBankNote(@RequestBody BankNoteReqDto bankNoteReqDto, HttpServletRequest httpServletRequest) {
+        bankNoteService.deleteBankNote(bankNoteReqDto.getAmount(),httpServletRequest);
+        return ResponseEntity.ok().build();
     }
 }

@@ -10,6 +10,7 @@ import com.company.entity.CardHolder;
 import com.company.entity.Currency;
 import com.company.exps.AlreadyExistException;
 import com.company.exps.NotFoundException;
+import com.company.exps.OkResponse;
 import com.company.mapping.BankNoteMapper;
 import com.company.repository.BankNoteRepository;
 import com.company.repository.BanknoteTypeRepository;
@@ -86,5 +87,23 @@ public class BankNoteServiceImpl implements BankNoteService {
         LOG.info("Client IP :  \t\t {}", ClientIP);
 
         return dto;
+    }
+   @Override
+    public void deleteBankNote(Integer amount, HttpServletRequest httpServletRequest) {
+        String ClientInfo = networkDataService.getClientIPv4Address(httpServletRequest);
+        String ClientIP = networkDataService.getRemoteUserInfo(httpServletRequest);
+
+        BankNote byName = bankNoteRepository.findByAmount(amount);
+        if (byName == null) {
+            LOG.info("This Banknote Not have  \t\t {}", amount);
+            LOG.info("Client host : \t\t {}", ClientInfo);
+            LOG.info("Client IP :  \t\t {}", ClientIP);
+            throw new AlreadyExistException("This Banknote Not have");
+        }
+        bankNoteRepository.delete(byName);
+        LOG.info("Delete Banknote by Amount  \t\t {}", amount);
+        LOG.info("Client host : \t\t {}", ClientInfo);
+        LOG.info("Client IP :  \t\t {}", ClientIP);
+        throw new OkResponse("Successfully Deleted banknote");
     }
 }

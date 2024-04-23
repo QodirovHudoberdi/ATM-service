@@ -942,7 +942,7 @@ List of constraint violations:[
 2024-04-17 16:38:39 [http-nio-8581-exec-5] WARN  c.c.s.impl.CardHolderServiceImpl - This Client already with us  		 
 2024-04-17 16:38:39 [http-nio-8581-exec-5] INFO  c.c.s.impl.CardHolderServiceImpl - Client host : 		 192.168.68.160
 2024-04-17 16:38:39 [http-nio-8581-exec-5] INFO  c.c.s.impl.CardHolderServiceImpl - Client IP :  		 localhost
-2024-04-17 16:38:39 [http-nio-8581-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:38:39 [http-nio-8581-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:38:39 [http-nio-8581-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:38:39 [http-nio-8581-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@38d35987]
 2024-04-17 16:38:40 [http-nio-8581-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -956,7 +956,7 @@ List of constraint violations:[
 2024-04-17 16:39:01 [http-nio-8581-exec-8] WARN  c.c.s.impl.CardHolderServiceImpl - This Client already with us  		 
 2024-04-17 16:39:01 [http-nio-8581-exec-8] INFO  c.c.s.impl.CardHolderServiceImpl - Client host : 		 192.168.68.160
 2024-04-17 16:39:01 [http-nio-8581-exec-8] INFO  c.c.s.impl.CardHolderServiceImpl - Client IP :  		 localhost
-2024-04-17 16:39:01 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:39:01 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:39:01 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:39:01 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@47c72715]
 2024-04-17 16:39:01 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1019,7 +1019,7 @@ List of constraint violations:[
 2024-04-17 16:42:11 [http-nio-8581-exec-4] WARN  c.c.s.impl.CardHolderServiceImpl - This Client already with us  		 
 2024-04-17 16:42:11 [http-nio-8581-exec-4] INFO  c.c.s.impl.CardHolderServiceImpl - Client host : 		 192.168.68.160
 2024-04-17 16:42:11 [http-nio-8581-exec-4] INFO  c.c.s.impl.CardHolderServiceImpl - Client IP :  		 localhost
-2024-04-17 16:42:11 [http-nio-8581-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:42:11 [http-nio-8581-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:42:11 [http-nio-8581-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:42:11 [http-nio-8581-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@5cccfa5f]
 2024-04-17 16:42:11 [http-nio-8581-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1069,7 +1069,7 @@ List of constraint violations:[
 2024-04-17 16:43:53 [http-nio-8581-exec-2] INFO  c.c.s.impl.CardHolderServiceImpl - Client host : 		 192.168.68.160
 2024-04-17 16:43:53 [http-nio-8581-exec-2] INFO  c.c.s.impl.CardHolderServiceImpl - Client IP :  		 localhost
 2024-04-17 16:43:54 [http-nio-8581-exec-2] WARN  c.c.s.impl.CardHolderServiceImpl - This Client already with us  		 
-2024-04-17 16:43:54 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:43:54 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:43:54 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:43:54 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@3152f997]
 2024-04-17 16:43:54 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1118,7 +1118,7 @@ List of constraint violations:[
 2024-04-17 16:46:23 [http-nio-8581-exec-1] INFO  c.c.s.impl.CardHolderServiceImpl - Create Card Holder  		 
 2024-04-17 16:46:23 [http-nio-8581-exec-1] INFO  c.c.s.impl.CardHolderServiceImpl - Client host : 		 192.168.68.160
 2024-04-17 16:46:23 [http-nio-8581-exec-1] INFO  c.c.s.impl.CardHolderServiceImpl - Client IP :  		 localhost
-2024-04-17 16:46:23 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:46:23 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:46:24 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:46:24 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@21536e63]
 2024-04-17 16:46:24 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1167,7 +1167,7 @@ List of constraint violations:[
 2024-04-17 16:47:24 [http-nio-8581-exec-2] INFO  c.c.s.impl.CardHolderServiceImpl - Create Card Holder  		 CardHolderReqDto(firstName=Hudoberdi, lastName=Qodirov, middleName=ShokirjonUgli, passport=AB, number=8569637, pinfl=52000112101517, birthDay=null)
 2024-04-17 16:47:24 [http-nio-8581-exec-2] INFO  c.c.s.impl.CardHolderServiceImpl - Client host : 		 192.168.68.160
 2024-04-17 16:47:24 [http-nio-8581-exec-2] INFO  c.c.s.impl.CardHolderServiceImpl - Client IP :  		 localhost
-2024-04-17 16:47:25 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:47:25 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:47:25 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:47:25 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@39a92b48]
 2024-04-17 16:47:25 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1216,7 +1216,7 @@ List of constraint violations:[
 2024-04-17 16:48:10 [http-nio-8581-exec-1] INFO  c.c.s.impl.CardHolderServiceImpl - Create Card Holder  		 CardHolderReqDto(firstName=Hudoberdi, lastName=Qodirov, middleName=ShokirjonUgli, passport=AB, number=8569637, pinfl=52000112101517, birthDay=null)
 2024-04-17 16:48:10 [http-nio-8581-exec-1] INFO  c.c.s.impl.CardHolderServiceImpl - Client host : 		 192.168.68.160
 2024-04-17 16:48:10 [http-nio-8581-exec-1] INFO  c.c.s.impl.CardHolderServiceImpl - Client IP :  		 localhost
-2024-04-17 16:48:10 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:48:10 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:48:10 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:48:10 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@6d622f8e]
 2024-04-17 16:48:10 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1265,7 +1265,7 @@ List of constraint violations:[
 2024-04-17 16:49:45 [http-nio-8581-exec-2] INFO  com.company.entity.CardHolder - Create Card Holder  		 CardHolderReqDto(firstName=Hudoberdi, lastName=Qodirov, middleName=ShokirjonUgli, passport=AB, number=8569637, pinfl=52000112101517, birthDay=null)
 2024-04-17 16:49:45 [http-nio-8581-exec-2] INFO  com.company.entity.CardHolder - Client host : 		 192.168.68.160
 2024-04-17 16:49:45 [http-nio-8581-exec-2] INFO  com.company.entity.CardHolder - Client IP :  		 localhost
-2024-04-17 16:49:45 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:49:45 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:49:45 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:49:45 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@32f6cff]
 2024-04-17 16:49:46 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1314,7 +1314,7 @@ List of constraint violations:[
 2024-04-17 16:51:49 [http-nio-8581-exec-2] INFO  com.company.entity.CardHolder - Create Card Holder  		 CardHolderReqDto(firstName=Hudoberdi, lastName=Qodirov, middleName=ShokirjonUgli, passport=AB, number=8569637, pinfl=52000112101517, birthDay=null)
 2024-04-17 16:51:49 [http-nio-8581-exec-2] INFO  com.company.entity.CardHolder - Client host : 		 192.168.68.160
 2024-04-17 16:51:49 [http-nio-8581-exec-2] INFO  com.company.entity.CardHolder - Client IP :  		 localhost
-2024-04-17 16:51:49 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:51:49 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:51:50 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:51:50 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@671136d9]
 2024-04-17 16:51:50 [http-nio-8581-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1334,7 +1334,7 @@ List of constraint violations:[
 2024-04-17 16:53:53 [http-nio-8581-exec-6] INFO  com.company.entity.CardHolder - Create Card Holder  		 CardHolderReqDto(firstName=Hudoberdi, lastName=Qodirov, middleName=ShokirjonUgli, passport=Ac, number=8569637, pinfl=52000112101517, birthDay=null)
 2024-04-17 16:53:53 [http-nio-8581-exec-6] INFO  com.company.entity.CardHolder - Client host : 		 192.168.68.160
 2024-04-17 16:53:53 [http-nio-8581-exec-6] INFO  com.company.entity.CardHolder - Client IP :  		 localhost
-2024-04-17 16:53:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 16:53:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 16:53:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 16:53:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@1ff0ae53]
 2024-04-17 16:53:53 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1354,7 +1354,7 @@ List of constraint violations:[
 2024-04-17 17:01:09 [http-nio-8581-exec-10] INFO  com.company.entity.CardHolder - Create Card Holder  		 CardHolderReqDto(firstName=Hudobe2rdi, lastName=Qodirov, middleName=ShokirjonUgli, passport=Ac, number=8565637, pinfl=52000112101517, birthDay=null)
 2024-04-17 17:01:09 [http-nio-8581-exec-10] INFO  com.company.entity.CardHolder - Client host : 		 192.168.68.160
 2024-04-17 17:01:09 [http-nio-8581-exec-10] INFO  com.company.entity.CardHolder - Client IP :  		 localhost
-2024-04-17 17:01:09 [http-nio-8581-exec-10] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 17:01:09 [http-nio-8581-exec-10] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 17:01:09 [http-nio-8581-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 17:01:09 [http-nio-8581-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@75323fc0]
 2024-04-17 17:01:09 [http-nio-8581-exec-10] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1756,7 +1756,7 @@ org.postgresql.util.PSQLException: ОШИБКА: повторяющееся зн
 2024-04-17 18:00:03 [http-nio-8581-exec-6] INFO  com.company.entity.CardHolder - Create Card Holder  		 CardHolderReqDto(firstName=Hudoberdi, lastName=Qodirov, middleName=ShokirjonUgli, passport=qC, number=8565637, pinfl=52000112101511, birthDay=200-12-20)
 2024-04-17 18:00:03 [http-nio-8581-exec-6] INFO  com.company.entity.CardHolder - Client host : 		 192.168.68.160
 2024-04-17 18:00:03 [http-nio-8581-exec-6] INFO  com.company.entity.CardHolder - Client IP :  		 localhost
-2024-04-17 18:00:03 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 18:00:03 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 18:00:03 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 18:00:03 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@58b386bf]
 2024-04-17 18:00:03 [http-nio-8581-exec-6] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]
@@ -1776,7 +1776,7 @@ org.postgresql.util.PSQLException: ОШИБКА: повторяющееся зн
 2024-04-17 18:00:46 [http-nio-8581-exec-8] INFO  com.company.entity.CardHolder - Create Card Holder  		 CardHolderReqDto(firstName=Hudoberdi, lastName=Qodirov, middleName=ShokirjonUgli, passport=wC, number=8565637, pinfl=52000112101551, birthDay=20001220)
 2024-04-17 18:00:46 [http-nio-8581-exec-8] INFO  com.company.entity.CardHolder - Client host : 		 192.168.68.160
 2024-04-17 18:00:46 [http-nio-8581-exec-8] INFO  com.company.entity.CardHolder - Client IP :  		 localhost
-2024-04-17 18:00:46 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-17 18:00:46 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-17 18:00:46 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-17 18:00:46 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@27816238]
 2024-04-17 18:00:46 [http-nio-8581-exec-8] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Client already with us]

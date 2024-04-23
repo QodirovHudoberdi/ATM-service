@@ -3,6 +3,7 @@ package com.company.controller;
 import com.company.dto.request.*;
 import com.company.service.CardService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ public class CardController {
 private final CardService cardService;
 
     @PostMapping("/createCard")
-    public ResponseEntity<?> createCard(@RequestBody CardReqDto cardReqDto, HttpServletRequest httpServletRequest) {
+    public ResponseEntity<?> createCard(@RequestBody @Valid CardReqDto cardReqDto, HttpServletRequest httpServletRequest) {
         return ResponseEntity.ok(cardService.createCard(cardReqDto,httpServletRequest));
     }
     @GetMapping("/byPinfl")
@@ -23,7 +24,7 @@ private final CardService cardService;
     }
    @PutMapping("/fill")
     public ResponseEntity<?> fillCard(@RequestBody FillCardReqDto cardReqDto, HttpServletRequest httpServletRequest) {
-        return ResponseEntity.ok(cardService.fillCard(cardReqDto,httpServletRequest));
+        return ResponseEntity.ok(cardService.fillCardBalance(cardReqDto,httpServletRequest));
     }
     @PutMapping("block")
     public ResponseEntity<?> blockCard(@RequestBody CardReqDto cardReqDto,HttpServletRequest httpServletRequest){
@@ -37,16 +38,4 @@ private final CardService cardService;
     public ResponseEntity<?> transfer(@RequestBody TransferReqDto transferReqDto, HttpServletRequest httpServletRequest){
         return ResponseEntity.ok(cardService.transferToCard(transferReqDto,httpServletRequest));
     }
-    @GetMapping("sendHistory")
-    public ResponseEntity<?> historySend(@RequestBody HistoryReqDto historyReqDto,HttpServletRequest httpServletRequest){
-        return ResponseEntity.ok(cardService.getSendHistory(historyReqDto,httpServletRequest));
-    }
-    @GetMapping("receiveHistory")
-    public ResponseEntity<?> historyReceive(@RequestBody HistoryReqDto historyReqDto,HttpServletRequest httpServletRequest){
-        return ResponseEntity.ok(cardService.getReceiveHistory(historyReqDto,httpServletRequest));
-    }
-    @PostMapping("cashing")
-    public  ResponseEntity<?> cashingFromAtm(@RequestBody CashingReqDto cashingReqDto , HttpServletRequest httpServletRequest){
-        return ResponseEntity.ok(cardService.cashingFromAtm(cashingReqDto,httpServletRequest));
-    }
-}
+ }

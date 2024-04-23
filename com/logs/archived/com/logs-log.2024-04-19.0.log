@@ -532,7 +532,7 @@ java.lang.IllegalArgumentException: The given id must not be null
 2024-04-19 12:11:33 [http-nio-8581-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/currency/createCurr", parameters={}
 2024-04-19 12:11:33 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.company.controller.CurrencyController#addCurrency(CurrencyReqDto, HttpServletRequest)
 2024-04-19 12:11:34 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [CurrencyReqDto(name=Euro)]
-2024-04-19 12:11:34 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.ControllerAdvice#on(AlreadyExistException)
+2024-04-19 12:11:34 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.company.exps.advice.ControllerAdvice#on(AlreadyExistException)
 2024-04-19 12:11:34 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-19 12:11:34 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.company.dto.response.ResponseMessage@7e440b5c]
 2024-04-19 12:11:34 [http-nio-8581-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.company.exps.AlreadyExistException: This Currency is have already]

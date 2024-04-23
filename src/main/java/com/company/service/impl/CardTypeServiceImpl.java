@@ -3,6 +3,7 @@ package com.company.service.impl;
 import com.company.dto.request.CardTypeReqDto;
 import com.company.dto.response.CardTypeResDto;
 import com.company.dto.response.CurrencyResDto;
+import com.company.entity.CardHolder;
 import com.company.entity.CardType;
 import com.company.entity.Currency;
 import com.company.exps.AlreadyExistException;
@@ -14,6 +15,8 @@ import com.company.repository.CurrencyRepository;
 import com.company.service.CardtypeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +30,8 @@ public class CardTypeServiceImpl implements CardtypeService {
     private final CardTypeMapper cardTypeMapper;
     private final CardTypeRepository cardTypeRepository;
     private final CurrencyRepository currencyRepository;
+    private final static Logger LOG = LoggerFactory.getLogger(CardType.class);
+    private final NetworkDataService networkDataService;
 
     /**
      * create card
@@ -36,6 +41,8 @@ public class CardTypeServiceImpl implements CardtypeService {
      */
     @Override
     public CardTypeResDto createCardType(CardTypeReqDto cardTypeReqDto, HttpServletRequest httpServletRequest) {
+        String ClientInfo = networkDataService.getClientIPv4Address(httpServletRequest);
+        String ClientIP = networkDataService.getRemoteUserInfo(httpServletRequest);
         cardTypeReqDto.setName(cardTypeReqDto.getName().toUpperCase());
         Optional<CardType> cardTypeByName = cardTypeRepository.findByName(cardTypeReqDto.getName().toUpperCase());
         if (cardTypeByName.isPresent()) {
@@ -53,6 +60,9 @@ public class CardTypeServiceImpl implements CardtypeService {
         cardTypeRepository.save(cardtype);
         CardTypeResDto dto = cardTypeMapper.toDto(cardtype);
         dto.setCurrency(currencyResDto);
+        LOG.info("Create Card Type  \t\t {}", cardTypeReqDto);
+        LOG.info("Client host : \t\t {}", ClientInfo);
+        LOG.info("Client IP :  \t\t {}", ClientIP);
         return dto;
     }
     /**
@@ -83,6 +93,8 @@ public class CardTypeServiceImpl implements CardtypeService {
      */
     @Override
     public CardTypeResDto updateCardType(String name, CardTypeReqDto cardTypeReqDto, HttpServletRequest httpServletRequest) {
+        String ClientInfo = networkDataService.getClientIPv4Address(httpServletRequest);
+        String ClientIP = networkDataService.getRemoteUserInfo(httpServletRequest);
         Optional<CardType> cardTypeByName = cardTypeRepository.findByName(name);
 
         if (cardTypeByName.isPresent()) {
@@ -101,7 +113,9 @@ public class CardTypeServiceImpl implements CardtypeService {
             }
 
             cardTypeRepository.save(cardType);
-
+            LOG.info("update card Type \t\t {}", cardTypeReqDto);
+            LOG.info("Client host : \t\t {}", ClientInfo);
+            LOG.info("Client IP :  \t\t {}", ClientIP);
             return cardTypeMapper.toDto(cardType);
         }
 
@@ -117,10 +131,15 @@ public class CardTypeServiceImpl implements CardtypeService {
      */
     @Override
     public void deleteCardType(String name, HttpServletRequest httpServletRequest) {
+        String ClientInfo = networkDataService.getClientIPv4Address(httpServletRequest);
+        String ClientIP = networkDataService.getRemoteUserInfo(httpServletRequest);
         Optional<CardType> cardTypeByName = cardTypeRepository.findByName(name);
         if (cardTypeByName.isPresent()) {
             CardType cardType = cardTypeByName.get();
             cardTypeRepository.delete(cardType);
+            LOG.info("Delete Card type by name\t\t {}",name);
+            LOG.info("Client host : \t\t {}", ClientInfo);
+            LOG.info("Client IP :  \t\t {}", ClientIP);
             throw new OkResponse("Successfully deleted");
         }
         throw new NotFoundException("This Card type not Found");
