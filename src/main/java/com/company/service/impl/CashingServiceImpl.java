@@ -6,10 +6,12 @@ import com.company.entity.BankNote;
 import com.company.entity.Card;
 import com.company.entity.HistoryCard;
 import com.company.exps.CardException;
-import com.company.exps.NotAllowedExceptions;
 import com.company.mapping.CardMapper;
-import com.company.repository.*;
+import com.company.repository.BankNoteRepository;
+import com.company.repository.CardRepository;
+import com.company.repository.HistoryCardRepository;
 import com.company.service.CashingService;
+import com.company.service.CheckService;
 import com.company.service.ValidateService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -27,28 +29,34 @@ public class CashingServiceImpl implements CashingService {
     private final HistoryCardRepository historyCardRepository;
     private final BankNoteRepository bankNoteRepository;
     private final static Logger LOG = LoggerFactory.getLogger(Card.class);
-    private final NetworkDataService networkDataService;
     private final ValidateService validateService;
+    private final CheckService checkService;
 
-
+    /**
+     * Performs a cash withdrawal from an ATM using the provided request data and HTTP servlet request.
+     *
+     * @param cashingReqDto      The cash withdrawal request data.
+     * @param httpServletRequest The HTTP servlet request associated with the transaction.
+     * @return The response data containing the details of the cash withdrawal.
+     * @throws CardException If an error occurs during the cash withdrawal process.
+     */
     @Override
     public CashingResDto cashingFromAtm(CashingReqDto cashingReqDto, HttpServletRequest httpServletRequest) {
         try {
-            String ClientInfo = networkDataService.getClientIPv4Address(httpServletRequest);
-            String ClientIP = networkDataService.getRemoteUserInfo(httpServletRequest);
+            checkService.checkDevice(httpServletRequest);
             Card byCardNumber = cardRepository.findByCardNumber(cashingReqDto.getCardNumber());
             validateService.validation(byCardNumber);
 
             if (byCardNumber.getBalance() < cashingReqDto.getAmount() * 1.01f) {
-                throw new NotAllowedExceptions("card is not have enough Money");
+                throw new CardException("card is not have enough Money");
             }
             if (!byCardNumber.getIsActive()) {
-                throw new NotAllowedExceptions("Card is Blocked");
+                throw new CardException("Card is Blocked");
             }
             if (!byCardNumber.getPinCode().equals(cashingReqDto.getPinCode())) {
                 if (validateService.validatePinCode(byCardNumber)) {
-                    throw new NotAllowedExceptions("Pin Code is Wrong");
-                } else throw new NotAllowedExceptions("Card is Blocked");
+                    throw new CardException("Pin Code is Wrong");
+                } else throw new CardException("Card is Blocked");
             }
             byCardNumber.setCount(3);
 
@@ -62,7 +70,7 @@ public class CashingServiceImpl implements CashingService {
             }
             Float amount = cashingReqDto.getAmount();
             if ((amount % allBankNotes.get(0).getAmount()) != 0) {
-                throw new NotAllowedExceptions("Entered Wrong Amount");
+                throw new CardException("Entered Wrong Amount");
             }
             List<BankNote> cashing = getCashing(allBankNotes, amount);
             bankNoteRepository.saveAll(cashing);
@@ -81,8 +89,6 @@ public class CashingServiceImpl implements CashingService {
             cashingResDto.setAmount(cashingReqDto.getAmount());
             cashingResDto.setCommission(cashingReqDto.getAmount() / 100);
             LOG.info("Cashing from Atm \t\t {}", cashingResDto);
-            LOG.info("Client host : \t\t {}", ClientInfo);
-            LOG.info("Client IP :  \t\t {}", ClientIP);
             return cashingResDto;
 
 
@@ -97,21 +103,24 @@ public class CashingServiceImpl implements CashingService {
      * @param allBankNotes The list of all available banknotes.
      * @param amount       The amount to be withdrawn.
      * @return The list of banknotes to be dispensed for the cash withdrawal.
-     * @throws NotAllowedExceptions If the ATM does not have the requested amount of money.
+     * @throws CardException If the ATM does not have the requested amount of money.
      */
     List<BankNote> getCashing(List<BankNote> allBankNotes, Float amount) {
-        for (int i = allBankNotes.size() - 1; i >= 0; i--) {
-            Integer amount1 = allBankNotes.get(i).getAmount();
-            int count = (int) (amount / amount1);
-            if (count > 0 && count < allBankNotes.get(i).getCount()) {
-                amount -= count * amount1;
+        try {
+            for (int i = allBankNotes.size() - 1; i >= 0; i--) {
+                Integer amount1 = allBankNotes.get(i).getAmount();
+                int count = (int) (amount / amount1);
+                if (count > 0 && count < allBankNotes.get(i).getCount()) {
+                    amount -= count * amount1;
+                }
+                allBankNotes.get(i).setCount(allBankNotes.get(i).getCount() - count);
             }
-            allBankNotes.get(i).setCount(allBankNotes.get(i).getCount() - count);
+            if (amount != 0) {
+                throw new CardException("Atm Do not Have this amount of money");
+            }
+            return allBankNotes;
+        } catch (Exception e) {
+            throw new CardException("Can not get Cashing :  " + e.getMessage());
         }
-        if (amount != 0) {
-            throw new NotAllowedExceptions("Atm Do not Have this amount of money");
-        }
-        return allBankNotes;
     }
-
 }

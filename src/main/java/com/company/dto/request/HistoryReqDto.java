@@ -6,4 +6,6 @@ import lombok.Data;
 public class HistoryReqDto {
     private String cardNumber;
     private String pinCode;
+    private String startDate;
+    private String endDate;
 }

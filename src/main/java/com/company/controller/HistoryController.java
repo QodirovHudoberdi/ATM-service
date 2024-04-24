@@ -25,6 +25,10 @@ public class HistoryController {
     }
     @GetMapping("HistoryCashing")
     public ResponseEntity<?> historyCard(@RequestBody HistoryReqDto historyReqDto,HttpServletRequest httpServletRequest){
-        return ResponseEntity.ok(historyService.getAtmHistory(historyReqDto,httpServletRequest));
+        return ResponseEntity.ok(historyService.getAllHistory(historyReqDto,httpServletRequest));
+    }
+    @GetMapping("historyWithDate")
+    public ResponseEntity<?> historyCardWithDate(@RequestBody HistoryReqDto historyReqDto,HttpServletRequest httpServletRequest){
+        return ResponseEntity.ok(historyService.getAllHistoryWithDate(historyReqDto,httpServletRequest));
     }
 }

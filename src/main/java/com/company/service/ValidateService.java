@@ -41,12 +41,17 @@ public class ValidateService {
         }
         return !currencyId.equals(byCardNumber.getCardType().getCurrency().getId());
     }
-
-    public Boolean validation(Card cardNumber) {
-        if (cardNumber == null) {
+    public void validate1(Card byCardNumber) {
+        if (byCardNumber == null) {
             throw new NotFoundException("Card Number is Wrong");
         }
-        if (!cardNumber.getCardType().getCurrency().getId().equals(cardNumber.getCardType().getCurrency().getId())) {
+    }
+
+    public Boolean validation(Card card) {
+        if (card == null) {
+            throw new NotFoundException("Card Number is Wrong");
+        }
+        if (!card.getCardType().getCurrency().getId().equals(card.getCardType().getCurrency().getId())) {
             throw new NotFoundException("Currency not found");
         } else return true;
 

@@ -16,5 +16,7 @@ public interface HistoryService {
 
     InPutResDto getReceiveHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
 
-    List<HistoryWithAtmResDto> getAtmHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
+    List<HistoryWithAtmResDto> getAllHistory(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
+
+    List<HistoryWithAtmResDto> getAllHistoryWithDate(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest);
 }
