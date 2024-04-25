@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class BankNote {
+public class BankNote implements Cloneable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,4 +28,13 @@ public class BankNote {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn
     private BankNoteType type;
+
+    @Override
+    public BankNote clone() {
+        try {
+            return  (BankNote) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }

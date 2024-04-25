@@ -49,7 +49,8 @@ public class BankNoteServiceImpl implements BankNoteService {
             checkService.checkDevice(httpServletRequest);
 
             BankNote byName = bankNoteRepository.findByAmount(bankNoteReqDto.getAmount());
-            if (byName != null) {
+            BankNote clone = byName.clone();
+            if (clone != null) {
 
                 throw new BankNoteException("This Banknote already have");
             }
@@ -91,10 +92,11 @@ public class BankNoteServiceImpl implements BankNoteService {
             checkService.checkDevice(httpServletRequest);
 
             BankNote byName = bankNoteRepository.findByAmount(amount);
-            if (byName == null) {
+            BankNote clone = byName.clone();
+            if (clone == null) {
                 throw new BankNoteException("This Banknote Not have");
             }
-            bankNoteRepository.delete(byName);
+            bankNoteRepository.delete(clone);
             throw new OkResponse("Successfully Deleted banknote");
         } catch (Exception e) {
             throw new BankNoteException("Can not Delete Banknote : " + e.getMessage());

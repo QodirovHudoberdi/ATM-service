@@ -27,7 +27,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class HistoryServiceImpl implements HistoryService {
+public class HistoryServiceImpl implements Cloneable,HistoryService {
 
     private final CardRepository cardRepository;
     private final CardMapper cardMapping;
@@ -144,7 +144,6 @@ public class HistoryServiceImpl implements HistoryService {
     public List<HistoryWithAtmResDto> getAllHistoryWithDate(HistoryReqDto historyReqDto, HttpServletRequest httpServletRequest) {
         String startDate = historyReqDto.getStartDate()+"T00:00:00.00";
         String endDate = historyReqDto.getEndDate()+"T23:59:59.00";
-
         LocalDateTime start = LocalDateTime.parse(startDate);
         LocalDateTime end = LocalDateTime.parse(endDate);
         System.out.println(start+"    " +end);
@@ -235,4 +234,12 @@ public class HistoryServiceImpl implements HistoryService {
         outPutResDto.setTransfers(outputModels);
     }
 
+    @Override
+    public HistoryServiceImpl clone() {
+        try {
+            return (HistoryServiceImpl) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
