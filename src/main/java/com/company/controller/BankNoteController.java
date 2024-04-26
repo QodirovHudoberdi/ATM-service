@@ -1,7 +1,6 @@
 package com.company.controller;
 
 import com.company.dto.request.BankNoteReqDto;
-import com.company.dto.request.CardReqDto;
 import com.company.service.BankNoteService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;

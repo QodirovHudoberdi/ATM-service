@@ -1,0 +1,54 @@
+2024-04-25 16:15:56 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.company.service.BankNoteServiceTest]: BankNoteServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-25 16:15:56 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.company.AtmCardHolderApplication for test class com.company.service.BankNoteServiceTest
+2024-04-25 16:15:58 [main] INFO  c.c.service.BankNoteServiceTest - Starting BankNoteServiceTest using Java 17.0.9 with PID 8484 (started by hudoberdi23 in C:\Users\hudoberdi23\Documents\AtmCardHolder)
+2024-04-25 16:15:58 [main] INFO  c.c.service.BankNoteServiceTest - The following 1 profile is active: "dev"
+2024-04-25 16:15:59 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@51b1a8f6
+2024-04-25 16:16:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-25 16:16:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 244 ms. Found 7 JPA repository interfaces.
+2024-04-25 16:16:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-25 16:16:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-25 16:16:04 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-25 16:16:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-25 16:16:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-25 16:16:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d1cfe4
+2024-04-25 16:16:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-25 16:16:10 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-25 16:16:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 16:16:12 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-25 16:16:12 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 22 mappings in 'requestMappingHandlerMapping'
+2024-04-25 16:16:13 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-04-25 16:16:13 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-25 16:16:13 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-25 16:16:13 [main] INFO  c.c.service.BankNoteServiceTest - Started BankNoteServiceTest in 16.018 seconds (process running for 22.014)
+2024-04-25 16:16:13 [main] INFO  c.company.utils.StartInitialization - --------- Successfully run Card Service  :>> 2024-04-25 16:16:13 <<------------->>
+2024-04-25 16:16:18 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@51b1a8f6, started on Thu Apr 25 16:15:59 UZT 2024
+2024-04-25 16:16:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 16:16:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-25 16:16:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-25 16:16:36 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.company.service.BankNoteServiceTest]: BankNoteServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-25 16:16:36 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.company.AtmCardHolderApplication for test class com.company.service.BankNoteServiceTest
+2024-04-25 16:16:38 [main] INFO  c.c.service.BankNoteServiceTest - Starting BankNoteServiceTest using Java 17.0.9 with PID 19580 (started by hudoberdi23 in C:\Users\hudoberdi23\Documents\AtmCardHolder)
+2024-04-25 16:16:38 [main] INFO  c.c.service.BankNoteServiceTest - The following 1 profile is active: "dev"
+2024-04-25 16:16:38 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@57aa341b
+2024-04-25 16:16:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-25 16:16:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 249 ms. Found 7 JPA repository interfaces.
+2024-04-25 16:16:42 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-25 16:16:42 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-25 16:16:42 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-25 16:16:43 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-25 16:16:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-25 16:16:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14292d71
+2024-04-25 16:16:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-25 16:16:47 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-25 16:16:47 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 16:16:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-25 16:16:50 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 22 mappings in 'requestMappingHandlerMapping'
+2024-04-25 16:16:50 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-04-25 16:16:50 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-25 16:16:50 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-25 16:16:50 [main] INFO  c.c.service.BankNoteServiceTest - Started BankNoteServiceTest in 13.432 seconds (process running for 17.373)
+2024-04-25 16:16:50 [main] INFO  c.company.utils.StartInitialization - --------- Successfully run Card Service  :>> 2024-04-25 16:16:50 <<------------->>
+2024-04-25 16:16:53 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@57aa341b, started on Thu Apr 25 16:16:38 UZT 2024
+2024-04-25 16:16:53 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 16:16:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-25 16:16:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

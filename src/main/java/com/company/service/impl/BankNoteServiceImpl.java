@@ -5,6 +5,7 @@ import com.company.dto.response.BankNoteResDto;
 import com.company.dto.response.BankNoteTypeResDto;
 import com.company.dto.response.CurrencyResDto;
 import com.company.entity.BankNote;
+
 import com.company.entity.BankNoteType;
 import com.company.entity.CardHolder;
 import com.company.entity.Currency;
@@ -21,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import static java.lang.Math.*;
 
 import java.util.Optional;
 
@@ -41,7 +43,7 @@ public class BankNoteServiceImpl implements BankNoteService {
      * @param httpServletRequest HttpServletRequest object for additional context
      * @return The newly created banknote as a response DTO
      * @throws BankNoteException If a banknote with the same amount already exists
-     * @throws BankNoteException     If the currency or banknote type is not found
+     * @throws BankNoteException If the currency or banknote type is not found
      */
     @Override
     public BankNoteResDto createBankNote(BankNoteReqDto bankNoteReqDto, HttpServletRequest httpServletRequest) {
