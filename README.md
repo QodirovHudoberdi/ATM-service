@@ -15,7 +15,6 @@ This system includes:
 
 
 
-Add this code  for run a project
 ```java
 @SpringBootApplication
 public class AtmCardHolderApplication {
