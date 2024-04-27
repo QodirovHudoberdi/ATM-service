@@ -4,13 +4,14 @@
 
 This system includes:
 
-* Save a cardHolder details
-* Add cards , card types And banknotes to system
-* Possibility to top up the card through ATM
+* Reformed  a cardHolder details
+* Chance to perform actions on Banknote
+* Chance to perform actions on card
 * The ability to withdraw cash from the card through an ATM
+* Possibility to top up the card through ATM
 * The ability to make transfers between cards
+* Chance to perform actions on card type
 * The ability to get all transactions performed through the card in a sorted order
-*  For the programmer : the ability to record the device of the client who used the program and the actions performed in an archive file
 
 
 
@@ -25,13 +26,10 @@ public class AtmCardHolderApplication {
 
 }
 ```
-# ATM  Service
-
-## Description
 
 
 
-***This is a simple ATM service that allows you to perform the following operations:***
+***You can get the services listed above in this table through the links***
 
 
 
@@ -44,6 +42,7 @@ public class AtmCardHolderApplication {
 | 5  |  [__Fill Out  Card Service__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)   |   ✅    |
 | 6  |     [__Transfer Service__ ](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)     |   ✅    |
 | 7  |     [__Card Type Service__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)     |   ✅    |
+| 8  |     [__Get Card History__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)      |   ✅    |
 
 
 
