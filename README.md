@@ -12,17 +12,10 @@ This system includes:
 * The ability to get all transactions performed through the card in a sorted order
 *  For the programmer : the ability to record the device of the client who used the program and the actions performed in an archive file
 
-### Reference Documentation
-
-For further reference, please consider the following sections:
-
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.2.4/maven-plugin/reference/html/)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.2.4/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.2.4/reference/htmlsingle/index.html#web)
 
 
 
-Add this code  for run project
+Add this code  for run a project
 ```java
 @SpringBootApplication
 public class AtmCardHolderApplication {
@@ -33,5 +26,26 @@ public class AtmCardHolderApplication {
 
 }
 ```
+# ATM v3 Service
+
+## Description
+
+
+
+***This is a simple ATM service that allows you to perform the following operations:***
+
+
+
+| No |                                                                       Services                                                                        | Status |
+|:--:|:-----------------------------------------------------------------------------------------------------------------------------------------------------:|:------:|
+| 1  | [__Card Holder Service__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardHolderController.java) |   ✅    |
+| 2  |   [__BankNote  Service__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/BankNoteController.java)   |   ✅    |
+| 3  |       [__Card Service__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)        |   ✅    |
+| 4  |    [__Cashing Service__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CashingController.java)     |   ✅    |
+| 5  |  [__Fill Out  Card Service__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)   |   ✅    |
+| 6  |     [__Transfer Service__ ](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)     |   ✅    |
+| 7  |     [__Card Type Service__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)     |   ✅    |
+
+
 
 
