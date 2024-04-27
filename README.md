@@ -45,5 +45,5 @@ public class AtmCardHolderApplication {
 | 8  |     [__Get Card History__](https://github.com/QodirovHudoberdi/ATM-service/blob/master/src/main/java/com/company/controller/CardController.java)      |   ✅    |
 
 
-
+>>>>>>> origin/master
 
